@@ -1,0 +1,52 @@
+# Enterprise Agent Demos
+
+企业 Agent 应用作品集：**文档深度研究 Agent** + **Multi-Agent 任务编排 Harness**。
+
+基于 LangGraph、Hybrid RAG、Function Calling、MCP，通义千问（百炼 OpenAI 兼容 API）。
+
+## 项目
+
+| 项目 | 目录 | 说明 | UI 端口 |
+|------|------|------|---------|
+| **Demo A** | [enterprise-doc-research](enterprise-doc-research/) | 复杂文档 Deep Research，带引用溯源 | 8501 |
+| **Demo B** | [multi-agent-ops-harness](multi-agent-ops-harness/) | Supervisor 多 Agent 复合任务编排 | 8503 |
+
+## 快速开始
+
+```bash
+git clone https://github.com/GuiXZhao/enterprise-agent-demos.git
+cd enterprise-agent-demos
+conda activate agent-dev
+
+# 1. 配置 API Key（根目录或子项目任选其一）
+copy .env.example .env
+
+# 2. Demo A
+cd enterprise-doc-research
+pip install -r requirements.txt
+python -c "from app.ingest import load_sample_docs; load_sample_docs()"
+streamlit run ui/streamlit_app.py --server.port 8501
+
+# 3. Demo B（另开终端）
+cd ../multi-agent-ops-harness
+pip install -r requirements.txt
+python scripts/load_demo_a_docs.py
+streamlit run ui/streamlit_app.py --server.port 8503
+```
+
+## 评测指标（封闭集，可复现）
+
+| 项目 | 命令 | 关键指标 |
+|------|------|----------|
+| Demo A | `python eval/run_eval.py` | Recall@5 100% · Citation 100% · Task 100%（60 题） |
+| Demo B | `python eval/run_eval.py` | Task success 100% · Multi-agent 100%（12 题） |
+
+## 隐私与安全
+
+- **请勿**将 `.env` 或 API Key 提交到仓库
+- 向量库与 SQLite 为本地运行产物，已在 `.gitignore` 排除
+- 示例文档为虚构企业制度/产品手册，仅用于演示
+
+## 作者
+
+赵贵兴 · AI 应用开发实习求职作品

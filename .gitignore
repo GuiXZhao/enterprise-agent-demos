@@ -1,0 +1,30 @@
+# 密钥与本地配置（切勿提交）
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Demo A：本地向量库（运行后生成）
+enterprise-doc-research/data/chroma/
+
+# Demo B：本地任务库（运行后生成）
+multi-agent-ops-harness/data/
+!multi-agent-ops-harness/data/.gitkeep
+
+# Demo A 数据目录占位
+enterprise-doc-research/data/*
+!enterprise-doc-research/data/.gitkeep
+
+# 系统文件
+.DS_Store
+Thumbs.db

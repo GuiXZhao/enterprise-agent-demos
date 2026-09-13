@@ -1,0 +1,79 @@
+[
+  {
+    "id": "t01",
+    "task": "采购合同金额 80 万，供应商延迟 20 天，按制度计算违约金并说明是否触顶 5% 上限。",
+    "expected_keywords": ["8000", "5%", "0.05"],
+    "expected_agents": ["research", "analyst"],
+    "require_calculator": true
+  },
+  {
+    "id": "t02",
+    "task": "对比 InsightDoc 与 FlowAgent 年费，200 人团队使用 3 年，总成本相差多少？",
+    "expected_keywords": ["9800", "68000"],
+    "expected_agents": ["research", "analyst"],
+    "require_calculator": true
+  },
+  {
+    "id": "t03",
+    "task": "连续远程办公 10 个工作日，市内交通能否报销？请结合制度说明。",
+    "expected_keywords": ["不予报销", "远程"],
+    "expected_agents": ["research", "reporter"]
+  },
+  {
+    "id": "t04",
+    "task": "涉及个人信息或跨境传输的采购项目，签约前要完成什么审核？",
+    "expected_keywords": ["数据出境", "信息安全"],
+    "expected_agents": ["research"]
+  },
+  {
+    "id": "t05",
+    "task": "战略供应商合同 100 万，预付 30%，验收后应付多少？",
+    "expected_keywords": ["700000", "70"],
+    "expected_agents": ["research", "analyst"],
+    "require_calculator": true
+  },
+  {
+    "id": "t06",
+    "task": "报销流程四步分别是什么？并说明出纳付款时限。",
+    "expected_keywords": ["5", "工作日"],
+    "expected_agents": ["research"]
+  },
+  {
+    "id": "t07",
+    "task": "InsightDoc 和 FlowAgent 分别不适合什么场景？",
+    "expected_keywords": ["InsightDoc", "FlowAgent"],
+    "expected_agents": ["research", "reporter"]
+  },
+  {
+    "id": "t08",
+    "task": "采购金额 50 万元以上需要什么审批？",
+    "expected_keywords": ["总经理"],
+    "expected_agents": ["research"]
+  },
+  {
+    "id": "t09",
+    "task": "远程办公有哪些信息安全要求？列出 3 条。",
+    "expected_keywords": ["VPN", "网盘"],
+    "expected_agents": ["research", "reporter"]
+  },
+  {
+    "id": "t10",
+    "task": "知识库里有没有年假规定？若没有请明确拒答。",
+    "expected_keywords": ["未找到", "没有"],
+    "expected_agents": ["research"],
+    "expect_refusal": true
+  },
+  {
+    "id": "t11",
+    "task": "FlowAgent 企业版起步价是多少？是否支持 MCP？",
+    "expected_keywords": ["68000", "MCP"],
+    "expected_agents": ["research"]
+  },
+  {
+    "id": "t12",
+    "task": "对比 InsightDoc 与 FlowAgent 三年成本差异，并把结论保存到任务笔记 task_012。",
+    "expected_keywords": ["9800", "68000"],
+    "expected_agents": ["research", "analyst", "reporter"],
+    "require_save": true
+  }
+]
