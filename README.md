@@ -6,10 +6,12 @@
 
 ## 项目
 
-| 项目 | 目录 | 说明 | UI 端口 |
-|------|------|------|---------|
-| **Demo A** | [enterprise-doc-research](enterprise-doc-research/) | 复杂文档 Deep Research，带引用溯源 | 8501 |
-| **Demo B** | [multi-agent-ops-harness](multi-agent-ops-harness/) | Supervisor 多 Agent 复合任务编排 | 8503 |
+| 项目 | 目录 | 说明 | 端口 |
+|------|------|------|------|
+| **Demo A** | [enterprise-doc-research](enterprise-doc-research/) | 复杂文档 Deep Research，带引用溯源 | UI 8501 · API 8001 |
+| **Demo B** | [multi-agent-ops-harness](multi-agent-ops-harness/) | Supervisor 多 Agent 复合任务编排 | UI 8503 · API 8002 |
+
+详细文档见各子目录 [README](enterprise-doc-research/README.md) 与 [面试话术](enterprise-doc-research/docs/INTERVIEW.md)。
 
 ## 快速开始
 
@@ -18,8 +20,9 @@ git clone https://github.com/GuiXZhao/enterprise-agent-demos.git
 cd enterprise-agent-demos
 conda activate agent-dev
 
-# 1. 配置 API Key（根目录或子项目任选其一）
-copy .env.example .env
+# 1. 配置 API Key（根目录或子项目 .env 任选其一）
+copy .env.example .env        # Windows
+# cp .env.example .env        # Linux / macOS
 
 # 2. Demo A
 cd enterprise-doc-research
@@ -47,6 +50,10 @@ streamlit run ui/streamlit_app.py --server.port 8503
 - 向量库与 SQLite 为本地运行产物，已在 `.gitignore` 排除
 - 示例文档为虚构企业制度/产品手册，仅用于演示
 
+## 技术栈
+
+LangGraph · LangChain · FastAPI · Streamlit · Chroma · MCP · Function Calling · 百炼 API
+
 ## 作者
 
-赵贵兴 · AI 应用开发实习求职作品
+赵贵兴 · [GitHub](https://github.com/GuiXZhao) · AI 应用开发实习求职作品
