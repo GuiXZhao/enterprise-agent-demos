@@ -18,15 +18,13 @@ Supervisor 将**复合任务**派给 **Research（MCP 检索）/ Analyst（计�
 
 ```bash
 conda activate agent-dev
-
-# 1. 安装依赖
-cd demos/multi-agent-ops-harness
+cd multi-agent-ops-harness
 pip install -r requirements.txt
 
-# 2. 加载 Demo A 文档（必须）
+# 加载 Demo A 文档（必须）
 python scripts/load_demo_a_docs.py
 
-# 3. UI
+# UI
 streamlit run ui/streamlit_app.py --server.port 8503
 ```
 
@@ -78,8 +76,7 @@ multi-agent-ops-harness/
 ├── app/mcp/                  # MCP Server + Client
 ├── app/tools/                # rag_search, calculator, save_note
 ├── ui/streamlit_app.py
-├── eval/tasks.json           # 12 复合任务
-└── docs/INTERVIEW.md
+└── eval/tasks.json           # 12 复合任务
 ```
 
 ## 与 Demo A

@@ -23,7 +23,7 @@ CHAT_MODEL = os.getenv("OPENAI_MODEL", "qwen-plus")
 EMBEDDING_MODEL = os.getenv("OPENAI_EMBEDDING_MODEL", "text-embedding-v3")
 
 MAX_SUPERVISOR_STEPS = int(os.getenv("MAX_SUPERVISOR_STEPS", "10"))
-# Windows 下 MCP 子进程偶发失败；演示稳定可设 false，面试讲 MCP Server 代码即可
+# Windows 下 MCP 子进程偶发失败；演示稳定可设 false，需要时再切 true
 USE_MCP_FOR_RESEARCH = os.getenv("USE_MCP_FOR_RESEARCH", "false").lower() in {
     "1",
     "true",

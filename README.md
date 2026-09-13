@@ -11,7 +11,7 @@
 | **Demo A** | [enterprise-doc-research](enterprise-doc-research/) | 复杂文档 Deep Research，带引用溯源 | UI 8501 · API 8001 |
 | **Demo B** | [multi-agent-ops-harness](multi-agent-ops-harness/) | Supervisor 多 Agent 复合任务编排 | UI 8503 · API 8002 |
 
-详细文档见各子目录 [README](enterprise-doc-research/README.md) 与 [面试话术](enterprise-doc-research/docs/INTERVIEW.md)。
+详细文档见各子目录 README：[Demo A](enterprise-doc-research/README.md) · [Demo B](multi-agent-ops-harness/README.md)
 
 ## 快速开始
 

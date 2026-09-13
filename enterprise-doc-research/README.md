@@ -2,8 +2,6 @@
 
 基于 **LangGraph** 的企业文档 Deep Research：**规划 → Hybrid 检索 → Rerank → 反思循环 → 带引用报告**。
 
-Architecture inspired by [langchain-ai/open_deep_research](https://github.com/langchain-ai/open_deep_research).
-
 ## 技术栈
 
 - LangGraph · LangChain · FastAPI · Streamlit
@@ -14,7 +12,7 @@ Architecture inspired by [langchain-ai/open_deep_research](https://github.com/la
 
 ```bash
 conda activate agent-dev
-cd demos/enterprise-doc-research
+cd enterprise-doc-research
 pip install -r requirements.txt
 ```
 
@@ -77,7 +75,7 @@ enterprise-doc-research/
 │   └── retrieval.py    # Hybrid + Rerank
 ├── ui/                 # Streamlit
 ├── eval/               # 60 题 + metrics
-├── docs/INTERVIEW.md   # 面试话术
+├── docs/BAD_CASES.md
 ├── sample_docs/
 └── data/chroma/
 ```
@@ -85,7 +83,3 @@ enterprise-doc-research/
 ## 环境变量
 
 见 `.env.example`：`USE_HYBRID`、`USE_RERANK`、`MAX_RETRIEVAL_ROUNDS`（默认 2）。
-
-## 面试材料
-
-详见 [docs/INTERVIEW.md](docs/INTERVIEW.md)。

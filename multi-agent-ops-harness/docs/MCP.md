@@ -26,7 +26,7 @@ python -m app.mcp.research_server
 USE_MCP_FOR_RESEARCH=true
 ```
 
-默认 `false`：进程内 `rag_search()`，演示更稳定；面试展示 Server 代码即可。
+默认 `false`：进程内 `rag_search()`，演示更稳定；需要验证 MCP 时再设为 `true`。
 
 ## 调用链
 
