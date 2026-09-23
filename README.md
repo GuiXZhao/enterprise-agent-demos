@@ -37,12 +37,23 @@ python scripts/load_demo_a_docs.py
 streamlit run ui/streamlit_app.py --server.port 8503
 ```
 
+## 版本演进
+
+| 项目 | 版本线 | 说明 |
+|------|--------|------|
+| Demo A | v0.1 → v0.2 → v1.0 → v1.1 | 纯向量 → Hybrid+Rerank → reflect 循环 + 60 题三维指标 |
+| Demo B | v1.0 | Supervisor 多 Agent 首版即封闭 12 题评测 |
+
+详见 **[CHANGELOG.md](CHANGELOG.md)** · Demo A [Bad Cases](enterprise-doc-research/docs/BAD_CASES.md) · Demo B [Bad Cases](multi-agent-ops-harness/docs/BAD_CASES.md)
+
+**5 分钟录屏脚本**：[docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md)
+
 ## 评测指标（封闭集，可复现）
 
-| 项目 | 命令 | 关键指标 |
-|------|------|----------|
-| Demo A | `python eval/run_eval.py` | Recall@5 100% · Citation 100% · Task 100%（60 题） |
-| Demo B | `python eval/run_eval.py` | Task success 100% · Multi-agent 100%（12 题） |
+| 项目 | 命令 | 关键指标 | 结果文件 |
+|------|------|----------|----------|
+| Demo A | `python eval/run_eval.py` | Recall@5 100% · Faithfulness 76.1% · Citation 100%（60 题） | [v1.0_results.txt](enterprise-doc-research/eval/v1.0_results.txt) |
+| Demo B | `python eval/run_eval.py` | Task success 100% · Agent coverage 100%（12 题） | [v1.0_results.txt](multi-agent-ops-harness/eval/v1.0_results.txt) |
 
 ## 隐私与安全
 

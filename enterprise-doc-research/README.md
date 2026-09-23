@@ -2,6 +2,8 @@
 
 基于 **LangGraph** 的企业文档 Deep Research：**规划 → Hybrid 检索 → Rerank → 反思循环 → 带引用报告**。
 
+Architecture inspired by [langchain-ai/open_deep_research](https://github.com/langchain-ai/open_deep_research).
+
 ## 技术栈
 
 - LangGraph · LangChain · FastAPI · Streamlit
@@ -12,7 +14,7 @@
 
 ```bash
 conda activate agent-dev
-cd enterprise-doc-research
+cd demos/enterprise-doc-research
 pip install -r requirements.txt
 ```
 
@@ -58,13 +60,15 @@ python eval/run_eval.py           # 全量 60 题（约 30–40 分钟）
 | Citation accuracy | 正文 `[来源:]` 与引用列表是否一致 |
 | Refusal accuracy | 拒答题是否正确拒答 |
 
-**版本 baseline**
+**版本 baseline**（详见 [CHANGELOG.md](../CHANGELOG.md)）
 
-| 版本 | Recall@5 | 题量 |
-|------|----------|------|
-| v0.1 | 80% | 5 |
-| v0.2 | 100% | 30 |
-| v1.0 | Recall 100% / Faithfulness 76% / Cite 100% | 60 |
+| 版本 | Recall@5 | 题量 | 结果文件 |
+|------|----------|------|----------|
+| v0.1 | 100%（复跑）；初版纯向量 80% | 5 | [eval/v0.1_results.txt](eval/v0.1_results.txt) |
+| v0.2 | 100% | 30 | [eval/v0.2_results.txt](eval/v0.2_results.txt) |
+| v1.0 | Recall 100% / Faithfulness 76% / Cite 100% | 60 | [eval/v1.0_results.txt](eval/v1.0_results.txt) |
+
+**Bad Cases 与迭代记录**：[docs/BAD_CASES.md](docs/BAD_CASES.md)
 
 ## 目录结构
 
@@ -75,7 +79,7 @@ enterprise-doc-research/
 │   └── retrieval.py    # Hybrid + Rerank
 ├── ui/                 # Streamlit
 ├── eval/               # 60 题 + metrics
-├── docs/BAD_CASES.md
+├── docs/INTERVIEW.md   # 面试话术
 ├── sample_docs/
 └── data/chroma/
 ```
@@ -83,3 +87,7 @@ enterprise-doc-research/
 ## 环境变量
 
 见 `.env.example`：`USE_HYBRID`、`USE_RERANK`、`MAX_RETRIEVAL_ROUNDS`（默认 2）。
+
+## 面试材料
+
+详见 [docs/INTERVIEW.md](docs/INTERVIEW.md)。

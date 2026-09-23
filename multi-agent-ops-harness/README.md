@@ -1,4 +1,6 @@
-# Demo B：Multi-Agent 企业任务编排 Harness（v1.0）
+# Demo B：Multi-Agent 企业任务编排（v1.0）
+
+> 目录名 `multi-agent-ops-harness` 为历史命名；本项目**未使用**名为 Harness 的第三方框架，编排层即 LangGraph Supervisor + 三子 Agent。
 
 Supervisor 将**复合任务**派给 **Research（MCP 检索）/ Analyst（计算）/ Reporter（报告）** 三个子 Agent。
 
@@ -11,20 +13,22 @@ Supervisor 将**复合任务**派给 **Research（MCP 检索）/ Analyst（计�
 | MCP | 自研 Server `rag_search_tool`（stdio） |
 | 文档库 | 复用 Demo A Chroma |
 | API | FastAPI + **SSE** 流式 trace |
-| 日志 | SQLite `data/harness.db` |
+| 日志 | SQLite `data/task_runs.db` |
 | UI | Streamlit **8503** |
 
 ## 一键启动
 
 ```bash
 conda activate agent-dev
-cd multi-agent-ops-harness
+
+# 1. 安装依赖
+cd demos/multi-agent-ops-harness
 pip install -r requirements.txt
 
-# 加载 Demo A 文档（必须）
+# 2. 加载 Demo A 文档（必须）
 python scripts/load_demo_a_docs.py
 
-# UI
+# 3. UI
 streamlit run ui/streamlit_app.py --server.port 8503
 ```
 
@@ -51,6 +55,8 @@ python eval/run_eval.py --quick   # 3 题，约 5 分钟
 python eval/run_eval.py           # 12 题，约 20 分钟
 ```
 
+**版本演进**：Demo B 首版即 v1.0；开发期 Bad Case 见 [docs/BAD_CASES.md](docs/BAD_CASES.md) · [CHANGELOG.md](../CHANGELOG.md)
+
 **v1.0 baseline（12 题封闭集，`eval/v1.0_results.txt`）：**
 
 | 指标 | 结果 |
@@ -76,13 +82,14 @@ multi-agent-ops-harness/
 ├── app/mcp/                  # MCP Server + Client
 ├── app/tools/                # rag_search, calculator, save_note
 ├── ui/streamlit_app.py
-└── eval/tasks.json           # 12 复合任务
+├── eval/tasks.json           # 12 复合任务
+└── docs/INTERVIEW.md
 ```
 
 ## 与 Demo A
 
 | | Demo A | Demo B |
 |---|--------|--------|
-| 模式 | Deep Research 流水线 | Multi-Agent Harness |
+| 模式 | Deep Research 流水线 | Multi-Agent 任务编排 |
 | 任务 | 文档研究问答 | 检索+计算+报告 |
 | MCP | 无 | Research 工具 MCP 化 |
